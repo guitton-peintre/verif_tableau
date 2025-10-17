@@ -1,21 +1,29 @@
-# 🔓 Extraction de clé publique ECC à partir d'une clé privée chiffrée
+## 🧭 Objectif
 
-Ce script Python (`public.py`) permet d’extraire une **clé publique ECC** à partir d’une **clé privée chiffrée** au format PEM.  
-Il s’appuie sur la bibliothèque [`cryptography`](https://cryptography.io/en/latest/) pour assurer la sécurité et la compatibilité avec les formats standards X.509.
+Ce dépôt contient **une clé publique officielle** (`ecc_public_key.pem`).  
+Elle permet à **n’importe qui** de **vérifier l’authenticité d’un tableau** par Guitton Francois.
 
----
-
-## 📋 Fonctionnalités
-
-- Lit une **clé privée ECC chiffrée** (`ecc_private_key.pem`).
-- Demande à l’utilisateur le **mot de passe** pour la déchiffrer.
-- Extrait et sauvegarde la **clé publique** au format PEM (`ecc_public_key.pem`).
-- Compatible avec les clés générées via `cryptography` (ex. script `generate_cert.py`).
+> 💡 En résumé : cette clé permet de **vérifier une signature**, mais **pas de signer ni de modifier** quoi que ce soit.
 
 ---
 
-## Prérequis
+## 🔍 À quoi sert cette clé publique ?
 
-- **Python 3.8** ou supérieur
-- Le module [`cryptography`](https://pypi.org/project/cryptography/)
+Chaque tableau ou certificat numérique créé par **Guitton François** est accompagné d’un **fichier de signature** (par exemple `mon_tableau.sig`) qui prouve son authenticité.
 
+- 🖼️ Le tableau (ou son fichier numérique) → `mon_tableau.jpg`
+- ✍️ La signature numérique → `mon_tableau.sig`
+- 🔑 La clé publique (fournie ici) → `ecc_public_key.pem`
+
+Grâce à cette clé publique, vous pouvez **vérifier que la signature correspond bien au tableau**.
+
+---
+
+## 🧰 Ce qu’il vous faut
+
+- **Python 3.8 ou plus**
+- Le module Python [`cryptography`](https://pypi.org/project/cryptography/)
+
+### Installation (une seule fois) :
+```bash
+pip install cryptography
