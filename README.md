@@ -14,12 +14,8 @@ Il s’appuie sur la bibliothèque [`cryptography`](https://cryptography.io/en/l
 
 ---
 
-## 🧰 Prérequis
+## Prérequis
 
 - **Python 3.8** ou supérieur
 - Le module [`cryptography`](https://pypi.org/project/cryptography/)
-
-### Installation :
-```bash
-pip install cryptography
 
